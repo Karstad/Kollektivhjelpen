@@ -5,3 +5,67 @@ body{
     background-color: lightgray;
 
 }
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.btn{
+    background-color: dimgray;
+    border: 2px solid black;
+    padding: 1em 2em;
+}
+.btn:hover,
+.btn:focus{
+
+}
+#mpNav{
+    height: 65vh;
+    width: 100vw;
+    font-size: large;
+}
+#mpNav h1{
+    font-weight: bold;
+    margin-left: 5rem;
+
+}
+#mpNav ul{
+    list-style: none;
+}
+#mpNav li{
+    margin: 5rem 2rem;
+}
+#mpHeader{
+    height: 25vh;
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: 1px solid #000000;
+}
+#mpHeader :first-child{
+    align-self: center;
+}
+#mpHeader :last-child{
+    align-self: center;
+}
+#mpHeader img{
+    height: 12vh;
+    width: 12vh;
+    border-radius: 12vh;
+    border: 1px solid #000000;
+    background-color: gray;
+    text-align: center;
+}
+#mpHeader p{
+    display: inline-flex;
+    font-size: 1.5rem;
+}
+#fNav{
+    box-sizing: border-box;
+    height: 10vh;
+    width: 100vw;
+    background-color: dimgray;
+    border: 1px solid #000;
+}
