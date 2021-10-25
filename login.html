@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial_scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <title>Kollektivhjelpen</title>
+</head>
+<body>
+    <div id="logo">
+        <img src="" alt="Logobilde til siden">
+    </div>
+    <div id="LRformContainer">
+        <div id="1Lit">
+            <a class="button" href="#login">Logg&nbsp;inn</a>
+            <p>Har du ikke bruker? <a href="#reg">Registrer&nbsp;deg&nbsp;her</a>
+            </p>
+        </div>
+        <div id="login">
+            <form id="loginForm">
+                <label for="UserEm">E-mail:</label>
+                <input id="UserEm" name="UserEmail" type="email">
+                <label for="pass">Passord:</label>
+                <input id="pass" name="password" type="password" placeholder="*****">
+                <button class="button" name="Loginbtn" type="button">Logg&nbsp;inn</button>
+            </form>
+        </div>
+        <div id="reg">
+            <form id="regForm">
+                <label for="navn">Fult navn:</label>
+                <input id="navn" name="navn" type="text" placeholder="Ola Normann">
+                <label for="UserEmail">E-post</label>
+                <input id="UserEmail" name="UserEmail" type="email" placeholder="Ola.normann@mail.com">
+                <label for="password">Passord:</label>
+                <input id="password" name="password" type="password" placeholder="*****">
+                <button class="button" name="submitReg" type="submit">Send&nbsp;inn</button>
+            </form>
+        </div>
+    </div>
+    <link href="scripts/LRscript.js" rel="script">
+</body>
+</html>
