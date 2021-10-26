@@ -1,9 +1,9 @@
-# Gruppe-12A-presentasjon
+# Kollektivhjelpen
 
->Dette er et Studentprosjekt
+>Dette er et Studentprosjekt på IT og informasjonnystemer ved UIA
 
-Dette er et miniprosjekt for fremvising i websideformat, av et app prosjekt vi har i IS-104.
-I dette proskjetet lager vi kun et par av siden til den tiltenkte appen.
+Dette er webside prototype versjon av en app vi lager kalt Kollektivhjelpen, den baserer seg på undersøkelser og forarbeid gjort
+i fagene IS-104 og IS-114.
 
 Grunnregler:
 1. Eier av repository står ansvarlig for merging pull-requests til **Main** (*@Karstad*)
