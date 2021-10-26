@@ -1,14 +1,15 @@
 /* starten på stylesheet*/
+/* multipage styling starter her*/
 body{
-    /*test av link*/
     margin: 0;
-    background-color: lightgray;
-
 }
+
 a{
     color: black;
     text-decoration: none;
 }
+/*slutten av multipage style setting*/
+/*her starter styling av hjemmesiden */
 
 .btn{
     background-color: dimgray;
@@ -69,3 +70,16 @@ a{
     background-color: dimgray;
     border: 1px solid #000;
 }
+/*her starter styling for login.html*/
+#LRformContainer{
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+}
+#login{
+    border: 1px solid aqua;
+    width: 100%;
+}
+/*her slutter styling for login.html*/
