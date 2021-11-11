@@ -1,6 +1,6 @@
 # Kollektivhjelpen
 
->Dette er et Studentprosjekt på IT og informasjonnystemer ved UIA
+>Dette er et Studentprosjekt på IT og informasjonssystemer ved UIA
 
 Dette er webside prototype versjon av en app vi lager kalt Kollektivhjelpen, den baserer seg på undersøkelser og forarbeid gjort
 i fagene IS-104 og IS-114.
