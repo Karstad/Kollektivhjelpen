@@ -4,194 +4,145 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="styles/style.css" rel="stylesheet" />
+        <link href="styles/navStyle.css" rel="stylesheet" />
+        <link href="styles/fellesOppg.css" rel="stylesheet" />
         <title>Oppgaver</title>
     </head>
     <body>
-        <header>
-            <div>
-                <img src="" alt="eksempel profilbilde" />
-            </div>
-            <nav>
-                <div>
-                    <a href="oppgaver.html">Oppgaver</a>
+        <nav>
+            <div class="dropContainer">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Mine</button>
+                    <div id="myDropdown" class="dropdown-content" id="drop">
+                        <a href="oppgaver.html">Oppgaver</a>
+                        <a href="kalender.html">Kalender</a>
+                        <a href="index.html">Index</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="kalender.html">Kalender</a>
-                </div>
-                <div>
-                    <a href="#">Handleliste</a>
-                </div>
-                <div>
-                    <a href="mittKollektiv.html">Mitt Kollektiv</a>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <div class="container">
-                <div class="gjoremal">
-                    <h1>TO DO List</h1>
-                    <form>
-                        <input type="text" placeholder="Legg til gjøremål" />
-                        <button
-                            type="submit"
-                            onclick="addTask(this); return false"
-                        >
-                            &plus;
-                        </button>
-                    </form>
-                    <ul></ul>
-                </div>
-            </div>
 
-            <div id="objekt"></div>
-        </main>
-        <footer id="fNav">
-            <a class="btn" href="index.html">Tilbake</a>
-        </footer>
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn2">
+                        Kollektiv
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                        <a href="fellesKalender.html">Felles Kalender</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="minTodoDiv" class="addItems">
+            <h2>Mine Opggaver</h2>
+            <input
+                type="text"
+                id="inputItems"
+                placeholder="Legg til gjøremål..."
+            />
+
+            <span onclick="newElement()" class="addBtn">Legg til</span>
+        </div>
+
         <script>
-            window.onload = loadTasks;
-
-            function loadTasks() {
-                //henter oppgaver fra local storage og gjør om til array
-                let tasks = Array.from(
-                    JSON.parse(localStorage.getItem("tasks"))
-                );
-
-                //looper gjennom oppgavene og legger de til i listen
-                tasks.forEach((task) => {
-                    const list = document.querySelector("ul");
-                    const li = document.createElement("li");
-                    li.innerHTML = `<input
-                                    type="checkbox"
-                                    onclick="taskComplete(this)"
-                                    class="check" ${
-                                        task.completed ? "checked" : ""
-                                    }>
-                                <input
-                                    type="text"
-                                    value="${task.task}"
-                                    class="task ${
-                                        task.completed ? "completed" : ""
-                                    }"
-                                    onfocus="getCurrentTask(this)"
-                                    onblur="editTask(this)"
-                                >
-                                <i
-                                    class="fa fa-trash"
-                                    onclick="removeTask(this)"
-                                ></i>`;
-                    list.insertBefore(li, list.children[0]);
-                });
+            //lukk-knapp for hver oppgave i listen
+            var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
             }
 
-            function addTask() {
-                const task = document.querySelector("form input");
-                const list = document.querySelector("ul");
+            //lukk-knap funksjonalitet
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                };
+            }
 
-                //om oppgaven er tom
-                if (task.value === "") {
-                    alert("Vennligst leg til gjøremål");
-                    return false;
+            //leggger til markør for ferdige oppgaver
+            var list = document.querySelector("ul");
+            list.addEventListener(
+                "click",
+                function (ev) {
+                    if (ev.target.tagName === "LI") {
+                        ev.target.classList.toggle("checked");
+                    }
+                },
+                false
+            );
+            //legg til knapp funksjonalitet
+            function newElement() {
+                var li = document.createElement("li");
+                var inputValue =
+                    "Oppgave: " + document.getElementById("inputItems").value;
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === "") {
+                    alert("Du må legge til en oppgave.");
+                } else {
+                    document.getElementById("fellesUl").appendChild(li);
                 }
+                document.getElementById("inputItems").value = "";
+                document.getElementById("inputPerson").value = "";
 
-                //sjekk om oppgaven allerede finnes
-                let tasks = Array.from(
-                    JSON.parse(localStorage.getItem("tasks"))
-                );
-                //når oppgaven finnes
-                tasks.forEach((todo) => {
-                    if (todo.task === task.value) {
-                        alert("Oppgaven finnes allerede!");
-                        task.value = "";
-                        return;
-                    }
-                });
-            }
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
 
-            //lagre aktiv oppgave for å spore endringer
-            var currentTask = null;
-
-            //hent aktiv oppg
-            function getCurrentTask(event) {
-                currentTask = event.value;
-            }
-
-            //endre på oppgaven og oppdatere lokal lagring
-            function editTask(event) {
-                let tasks = Array.from(
-                    JSON.parse(localStorage.getItem("tasks"))
-                );
-                //sjekk om oppgaven er tom
-                if (event.value === "") {
-                    alert("Oppgaven er tom!");
-                    event.value = currentTask;
-                    return;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    };
                 }
-                //oppgaven finnes allerede
-                tasks.forEach((task) => {
-                    if (task.task === event.value) {
-                        alert("Oppgaven finnes allerede!");
-                        event.value = currentTask;
-                        return;
-                    }
-                });
-                //oppdater oppgave
-                tasks.forEach((task) => {
-                    if (task.task === currentTask) {
-                        task.task = event.value;
-                    }
-                });
-                //oppdater lokal lagring
-                localStorage.setItem("tasks", JSON.stringify(tasks));
             }
 
-            function taskComplete(event) {
-                let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-                tasks.forEach(task => {
-                    if (task.task === event.nextElementSibling.value) {
-                        task.completed = !task.completed;
-                    }
-                });
-                localStorage.setItem("tasks", JSON.stringify(tasks));
-                event.nextElementSibling.classList.toggle("completed");
+            /* bytter på å vise og gjemme meny ved klikk */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
             }
 
-            function removeTask(event) {
-                let tasks = Array.from(JSON.parse(localStorage.getItem(&quot;task&quot;)));
-                tasks.forEach(task =&gt; {
-                    if (task.task === event.parentNode.children[1].value) {
-                        //slett oppgave
-                        tasks.splice(tasks.indexOf(task), 1);
-                    }
-                });
-                localStorage.setItem(&quot;tasks&quot;, JSON.stringify(tasks));
+            //meny2
+            function myFunction2() {
+                document
+                    .getElementById("myDropdown2")
+                    .classList.toggle("show2");
             }
 
-            const oppgave = [
-                {
-                    task: "Støvsuge rommet",
-                    deadline: "Fredag",
-                },
-                {
-                    task: "Vaske bad",
-                    deadline: "Torsdag",
-                },
-                {
-                    task: "Vaske bad",
-                    deadline: "Torsdag",
-                },
-                {
-                    task: "Støvsuge rommet",
-                    deadline: "Fredag",
-                },
-            ];
-            const div = document.getElementById("objekt");
-            div.innerHTML = oppgave
-                .map((item) => {
-                    return `Oppgave: ${item.task} <br> Deadline: ${item.deadline} <br>`;
-                })
-                .join("");
+            //close menu2
+            window.onclick = function (event) {
+                if (!event.target.matches(".dropbtn")) {
+                    var dropdowns =
+                        document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains("show")) {
+                            openDropdown.classList.remove("show");
+                        }
+                    }
+                }
+                if (!event.target.matches(".dropbtn2")) {
+                    var dropdowns =
+                        document.getElementsByClassName("dropdown-content");
+                    var j;
+                    for (j = 0; j < dropdowns.length; j++) {
+                        var openDropdown = dropdowns[j];
+                        if (openDropdown.classList.contains("show2")) {
+                            openDropdown.classList.remove("show2");
+                        }
+                    }
+                }
+            };
         </script>
     </body>
 </html>

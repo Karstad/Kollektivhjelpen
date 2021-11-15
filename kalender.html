@@ -13,17 +13,28 @@
                 <img src="" alt="eksempel profilbilde" />
             </div>
             <nav>
-                <div>
-                    <a href="oppgaver.html">Oppgaver</a>
-                </div>
-                <div>
-                    <a href="kalender.html">Kalender</a>
-                </div>
-                <div>
-                    <a href="#">Handleliste</a>
-                </div>
-                <div>
-                    <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                <div class="dropContainer">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">
+                            Mine
+                        </button>
+                        <div id="myDropdown" class="dropdown-content" id="drop">
+                            <a href="oppgaver.html">Oppgaver</a>
+                            <a href="kalender.html">Kalender</a>
+                            <a href="index.html">Index</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button onclick="myFunction2()" class="dropbtn2">
+                            Kollektiv
+                        </button>
+                        <div id="myDropdown2" class="dropdown-content">
+                            <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                            <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                            <a href="fellesKalender.html">Felles Kalender</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>
