@@ -1,51 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Felles oppgaver</title>
-</head>
-<body>
-    <header id="mpHeader">
-        <img src="" alt="eksempel profilbilde">
-        <p id="navnHeader">Ola normann</p>
-    </header>
-    <a class="btn" href="mittKollektiv.html">Tilbake</a>
-    <!--eksempel på oppsett-->
-    <section id="oppgTabell">
-        <h2>Kollektivets gjøremål:</h2>
-        <table>
-            <tr>
-                <th>Oppgave</th>
-                <th>Deadline</th>
-                <th>Deltaker</th>
-            </tr>
-            <tr>
-                <td>Vaske badet</td>
-                <td>3.10.21</td>
-                <td>Cathrine</td>
-            </tr>
-            <tr>
-                <td>lage middag</td>
-                <td>12.10.21</td>
-                <td>Tom</td>
-            </tr>
-            <tr>
-                <td>Ta oppvasken</td>
-                <td>21.10.21</td>
-                <td>Thomas</td>
-            </tr>
-            <tr>
-                <td>Støvsug rommet</td>
-                <td>27.10.21</td>
-                <td>Mats</td>
-            </tr>
-        </table>
-    </section>
-    <footer id="fNav">
-    </footer>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/fellesOppg.css" rel="stylesheet" />
+        <link href="navStyle.css" rel="stylesheet" />
+        <title>Felles oppgaver</title>
+    </head>
+    <body>
+        <nav>
+            <div class="dropContainer">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Mine</button>
+                    <div id="myDropdown" class="dropdown-content" id="drop">
+                        <a href="#">Oppgaver</a>
+                        <a href="#">Handleliste</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn2">
+                        Kollektiv
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                        <a href="#">Link 5</a>
+                        <a href="#">Link 6</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="todoDiv" class="addItems">
+            <h2>Felles Opggaver</h2>
+            <input
+                type="text"
+                id="inputItems"
+                placeholder="Legg til gjøremål..."
+            />
+            <input type="text" id="inputPerson" placeholder="Legg til person" />
+            <span onclick="newElement()" class="addBtn">Legg til</span>
+        </div>
+
+        <ul id="fellesUl"></ul>
+
+        <script>
+            //lukk-knapp for hver oppgave i listen
+            var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                myNodelist[i].appendChild(span);
+            }
+
+            //lukk-knap funksjonalitet
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                };
+            }
+
+            //leggger til markør for ferdige oppgaver
+            var list = document.querySelector("ul");
+            list.addEventListener(
+                "click",
+                function (ev) {
+                    if (ev.target.tagName === "LI") {
+                        ev.target.classList.toggle("checked");
+                    }
+                },
+                false
+            );
+            //legg til knapp funksjonalitet
+            function newElement() {
+                var li = document.createElement("li");
+                if (document.getElementById("inputPerson").value != "") {
+                    var inputValue =
+                        "Oppgave: " +
+                        document.getElementById("inputItems").value +
+                        Array(32).fill("\xa0").join("") +
+                        "Person: " +
+                        document.getElementById("inputPerson").value;
+                } else {
+                    var inputValue =
+                        "Oppgave: " +
+                        document.getElementById("inputItems").value;
+                }
+                var t = document.createTextNode(inputValue);
+                li.appendChild(t);
+                if (inputValue === "") {
+                    alert("Du må legge til en oppgave.");
+                } else {
+                    document.getElementById("fellesUl").appendChild(li);
+                }
+                document.getElementById("inputItems").value = "";
+                document.getElementById("inputPerson").value = "";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    };
+                }
+            }
+
+            /* bytter på å vise og gjemme meny ved klikk */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            //meny2
+            function myFunction2() {
+                document
+                    .getElementById("myDropdown2")
+                    .classList.toggle("show2");
+            }
+
+            //close menu2
+            window.onclick = function (event) {
+                if (!event.target.matches(".dropbtn")) {
+                    var dropdowns =
+                        document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains("show")) {
+                            openDropdown.classList.remove("show");
+                        }
+                    }
+                }
+                if (!event.target.matches(".dropbtn2")) {
+                    var dropdowns =
+                        document.getElementsByClassName("dropdown-content");
+                    var j;
+                    for (j = 0; j < dropdowns.length; j++) {
+                        var openDropdown = dropdowns[j];
+                        if (openDropdown.classList.contains("show2")) {
+                            openDropdown.classList.remove("show2");
+                        }
+                    }
+                }
+            };
+        </script>
+    </body>
 </html>

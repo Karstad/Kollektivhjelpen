@@ -1,142 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Felles Kalender</title>
-</head>
-<body>
-    <header id="mpHeader">
-        <img src="" alt="eksempel profilbilde">
-        <p id="navnHeader">Ola normann</p>
-    </header>
-    <div class="month">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>Oktober<br><span style="font-size:18px">2021</span></li>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/style.css" rel="stylesheet" />
+        <title>Felles Kalender</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="" alt="eksempel profilbilde" />
+            </div>
+            <nav>
+                <div>
+                    <a href="oppgaver.html">Oppgaver</a>
+                </div>
+                <div>
+                    <a href="kalender.html">Kalender</a>
+                </div>
+                <div>
+                    <a href="#">Handleliste</a>
+                </div>
+                <div>
+                    <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>Oktober<br /><span style="font-size: 18px">2021</span></li>
+            </ul>
+        </div>
+
+        <ul class="weekdays">
+            <li>Mandag</li>
+            <li>Tirsdag</li>
+            <li>Onsdag</li>
+            <li>Torsdag</li>
+            <li>Fredag</li>
+            <li>Lørdag</li>
+            <li>Søndag</li>
         </ul>
-      </div>
-      
-      <ul class="weekdays">
-        <li>Mandag</li>
-        <li>Tirsdag</li>
-        <li>Onsdag</li>
-        <li>Torsdag</li>
-        <li>Fredag</li>
-        <li>Lørdag</li>
-        <li>Søndag</li>
-      </ul>
-      
-      <ul class="days">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        <li>1</li>
-        <li>2</li>
-        <li><span class="oppgave">3
-            <span class="test"> 
-                <section id="oppgTabell">
-                    <table>
-                        <tr>
-                            <th>Oppgave</th>
-                            <th>Deadline</th>
-                            <th>Deltaker</th>
-                        </tr>
-                        <tr>
-                            <td>Vaske badet</td>
-                            <td>3.10.21</td>
-                            <td>Cathrine</td>
-                        </tr>
-                    </table>
-                </section>
-            </span>
-        </span></li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li><span class="oppgave">12
-            <span class="test"> 
-                <section id="oppgTabell">
-                    <table>
-                        <tr>
-                            <th>Oppgave</th>
-                            <th>Deadline</th>
-                            <th>Deltaker</th>
-                        </tr>
-                        <tr>
-                            <td>lage middag</td>
-                            <td>12.10.21</td>
-                            <td>Tom</td>
-                        </tr>
-                    </table>
-                </section>
-            </span>
-        </span></li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li><span class="oppgave">21
-            <span class="test"> 
-                <section id="oppgTabell">
-                    <table>
-                        <tr>
-                            <th>Oppgave</th>
-                            <th>Deadline</th>
-                            <th>Deltaker</th>
-                        </tr>
-                        <tr>
-                            <td>Ta oppvasken</td>
-                            <td>21.10.21</td>
-                            <td>Thomas</td>
-                        </tr>
-                    </table>
-                </section>
-            </span>
-        </span></li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li><span class="oppgave">27
-            <span class="test"> 
-                <section id="oppgTabell">
-                    <table>
-                        <tr>
-                            <th>Oppgave</th>
-                            <th>Deadline</th>
-                            <th>Deltaker</th>
-                        </tr>
-                        <tr>
-                            <td>støvsuge rommet</td>
-                            <td>19.10.21</td>
-                            <td>Mats</td>
-                        </tr>
-                    </table>
-                </section>
-            </span>
-        </span></li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-      </ul>
-      <footer id="fNav">
-        <a class="btn" href="mittKollektiv.html">Tilbake</a>
-    </footer>
-</body>
+
+        <ul class="days">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>1</li>
+            <li>2</li>
+            <li>
+                <span class="oppgave"
+                    >3
+                    <span class="test">
+                        <section id="oppgTabell">
+                            <table>
+                                <tr>
+                                    <th>Oppgave</th>
+                                    <th>Deadline</th>
+                                    <th>Deltaker</th>
+                                </tr>
+                                <tr>
+                                    <td>Vaske badet</td>
+                                    <td>3.10.21</td>
+                                    <td>Cathrine</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </span>
+                </span>
+            </li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>
+                <span class="oppgave"
+                    >12
+                    <span class="test">
+                        <section id="oppgTabell">
+                            <table>
+                                <tr>
+                                    <th>Oppgave</th>
+                                    <th>Deadline</th>
+                                    <th>Deltaker</th>
+                                </tr>
+                                <tr>
+                                    <td>lage middag</td>
+                                    <td>12.10.21</td>
+                                    <td>Tom</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </span>
+                </span>
+            </li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>
+                <span class="oppgave"
+                    >21
+                    <span class="test">
+                        <section id="oppgTabell">
+                            <table>
+                                <tr>
+                                    <th>Oppgave</th>
+                                    <th>Deadline</th>
+                                    <th>Deltaker</th>
+                                </tr>
+                                <tr>
+                                    <td>Ta oppvasken</td>
+                                    <td>21.10.21</td>
+                                    <td>Thomas</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </span>
+                </span>
+            </li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>
+                <span class="oppgave"
+                    >27
+                    <span class="test">
+                        <section id="oppgTabell">
+                            <table>
+                                <tr>
+                                    <th>Oppgave</th>
+                                    <th>Deadline</th>
+                                    <th>Deltaker</th>
+                                </tr>
+                                <tr>
+                                    <td>støvsuge rommet</td>
+                                    <td>19.10.21</td>
+                                    <td>Mats</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </span>
+                </span>
+            </li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+        <footer id="fNav">
+            <a class="btn" href="mittKollektiv.html">Tilbake</a>
+        </footer>
+    </body>
 </html>

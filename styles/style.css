@@ -1,58 +1,165 @@
 /* starten på stylesheet*/
-body{
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
     /*test av link*/
     margin: 0;
+    margin-bottom: 100px;
     background-color: lightgray;
-
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
 }
-a{
+
+a {
     color: black;
     text-decoration: none;
 }
+nav {
+    display: flex;
+    gap: 0.5em;
+}
 
-.btn{
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    background-color: #e1e3ea;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.gjoremal {
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .gjoremal {
+        width: 90%;
+    }
+}
+
+.gjoremal h1 {
+    color: white;
+    font-size: 40px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: indianred;
+    font-family: "Open Sans", sans-serif;
+}
+
+.gjoremal form {
+    display: flex;
+    width: 100%;
+    background-color: #262e4c;
+}
+
+.gjoremal form input {
+    border: none;
+    background-color: #3c4979;
+    font-size: 18px;
+    color: white;
+    padding: 10px;
+    width: 90%;
+}
+
+.gjoremal form button {
+    border: none;
+    color: white;
+    background-color: #1dd2af;
+    font-size: 25px;
+    font-weight: 600;
+    height: 42px;
+    width: 10%;
+}
+
+.gjoremal ul {
+    list-style: none;
+    color: #e0e0e0;
+    padding: 0;
+}
+
+.gjoremal ul li {
+    padding: 10px;
+    background-color: #262e4c;
+    border-bottom: 1px solid #3a4674;
+}
+
+.check {
+    width: 0.8em;
+    height: 0.8em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    -webkit-appearance: none;
+}
+
+.check:checked {
+    background-color: #1dd2af;
+}
+
+.task {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.task:focus {
+    outline: none;
+}
+
+.gjoremal ul li i {
+    float: right;
+    cursor: pointer;
+}
+
+.gjoremal ul li i:hover {
+    color: rgb(255, 82, 82);
+}
+
+.complete {
+    color: rgba(192, 192, 192, 0.842);
+    text-decoration: line-through;
+}
+
+.btn {
     background-color: dimgray;
     border: 2px solid black;
     padding: 1em 2em;
 }
-.btn:hover{
+.btn:hover {
     background-color: green;
 }
-.btn:focus{
-
+.btn:focus {
 }
-#mpNav{
+#mpNav {
     height: 65vh;
-    width: 100vw;
+    width: 100%;
     font-size: large;
 }
-#mpNav h1{
+#mpNav h1 {
     font-weight: bold;
     margin-left: 5rem;
-
 }
-#mpNav ul{
+#mpNav ul {
     list-style: none;
 }
-#mpNav li{
+#mpNav li {
     margin: 5rem 2rem;
 }
-#mpHeader{
+Header {
     height: 25vh;
-    width: 100vw;
-    display: inline-flex;
+    width: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+}
 
-    border: 1px solid #000000;
-}
-#mpHeader :first-child{
-    align-self: center;
-}
-#mpHeader :last-child{
-    align-self: center;
-}
-#mpHeader img{
+Header img {
     height: 12vh;
     width: 12vh;
     border-radius: 12vh;
@@ -60,14 +167,14 @@ a{
     background-color: gray;
     text-align: center;
 }
-#mpHeader p{
+Header p {
     display: inline-flex;
     font-size: 1.5rem;
 }
-#fNav{
+#fNav {
     box-sizing: border-box;
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     background-color: dimgray;
     border: 1px solid #000;
     position: fixed;
@@ -77,111 +184,114 @@ a{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  #oppgTabell td, #oppgTabell th {
+}
+
+#oppgTabell td,
+#oppgTabell th {
     border: 1px solid #ddd;
     padding: 8px;
-  }
-  
-  #oppgTabell tr:nth-child(even){background-color: #f2f2f2;}
-  
-  /*#oppgTabell tr:hover {background-color: #ddd;}*/
-  
-  #oppgTabell th {
+}
+
+#oppgTabell tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*#oppgTabell tr:hover {background-color: #ddd;}*/
+
+#oppgTabell th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: dimgray;
     color: white;
-  }
-  ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
+}
+ul {
+    list-style-type: none;
+}
 
 /* Month header */
 .month {
-  padding: 70px 25px;
-  width: 100%;
-  background: dimgray;
-  text-align: center;
+    padding: 15px 15px;
+    background: dimgray;
+    text-align: center;
 }
 
 /* Month list */
 .month ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 /* Previous button inside month header */
 .month .prev {
-  float: left;
-  padding-top: 10px;
+    float: left;
+    padding-top: 10px;
 }
 
 /* Next button */
 .month .next {
-  float: right;
-  padding-top: 10px;
-  padding-right: 10px;
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 /* Weekdays (Mon-Sun) */
 .weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color:#ddd;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
 }
 
 .weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
 }
 
 /* Days (1-31) */
 .days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
 }
 
 .days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
 }
 
 /* Highlight the "current" day */
 .days li .oppgave {
-  padding: 5px;
-  background: dimgray;
-  color: white !important
+    padding: 5px;
+    background: dimgray;
+    color: white !important;
 }
 
-.days li .oppgave:hover{
+.days li .oppgave:hover {
     padding: 7px;
     background: green;
 }
-.oppgave{
+.oppgave {
     position: relative;
     display: inline-block;
 }
-.oppgave .test{
+.oppgave .test {
     visibility: hidden;
     background-color: white;
-    color:black;
+    color: black;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -191,15 +301,15 @@ body {font-family: Verdana, sans-serif;}
     left: 50%;
     margin-left: -60px;
 }
-.oppgave .test::after{
+.oppgave .test::after {
     content: "";
     position: absolute;
     top: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
-    }
-.oppgave:hover .test{
+}
+.oppgave:hover .test {
     visibility: visible;
 }
 /*
