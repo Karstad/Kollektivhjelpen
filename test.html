@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/stelTest.css" rel="stylesheet" />
+        <title>Forside</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="gjoremal">
+                <h1>TO DO List</h1>
+                <form>
+                    <input type="text" placeholder="Legg til gjøremål" />
+                    <button type="submit" onclick="addTask(this); return false">
+                        &plus;
+                    </button>
+                </form>
+                <ul></ul>
+            </div>
+        </div>
+
+        <div id="objekt"></div>
+
+        <script>
+            window.onload = loadTasks;
+
+            function loadTasks() {
+                //henter oppgaver fra local storage og gjør om til array
+                let tasks = Array.from(
+                    JSON.parse(localStorage.getItem("tasks"))
+                );
+
+                //looper gjennom oppgavene og legger de til i listen
+                tasks.forEach((task) => {
+                    const list = document.querySelector("ul");
+                    const li = document.createElement("li");
+                    li.innerHTML = `<input
+                                    type="checkbox"
+                                    onclick="taskComplete(this)"
+                                    class="check" ${
+                                        task.completed ? "checked" : ""
+                                    }>
+                                <input
+                                    type="text"
+                                    value="${task.task}"
+                                    class="task ${
+                                        task.completed ? "completed" : ""
+                                    }"
+                                    onfocus="getCurrentTask(this)"
+                                    onblur="editTask(this)"
+                                >
+                                <i
+                                    class="fa fa-trash"
+                                    onclick="removeTask(this)"
+                                ></i>`;
+                    list.insertBefore(li, list.children[0]);
+                });
+            }
+
+            function addTask() {
+                const task = document.querySelector("form input");
+                const list = document.querySelector("ul");
+
+                //om oppgaven er tom
+                if (task.value === "") {
+                    alert("Vennligst leg til gjøremål");
+                    return false;
+                }
+
+                //sjekk om oppgaven allerede finnes
+                let tasks = Array.from(
+                    JSON.parse(localStorage.getItem("tasks"))
+                );
+                //når oppgaven finnes
+                tasks.forEach((todo) => {
+                    if (todo.task === task.value) {
+                        alert("Oppgaven finnes allerede!");
+                        task.value = "";
+                        return;
+                    }
+                });
+            }
+
+            //lagre aktiv oppgave for å spore endringer
+            var currentTask = null;
+
+            //hent aktiv oppg
+            function getCurrentTask(event) {
+                currentTask = event.value;
+            }
+
+            //endre på oppgaven og oppdatere lokal lagring
+            function editTask(event) {
+                let tasks = Array.from(
+                    JSON.parse(localStorage.getItem("tasks"))
+                );
+                //sjekk om oppgaven er tom
+                if (event.value === "") {
+                    alert("Oppgaven er tom!");
+                    event.value = currentTask;
+                    return;
+                }
+                //oppgaven finnes allerede
+                tasks.forEach((task) => {
+                    if (task.task === event.value) {
+                        alert("Oppgaven finnes allerede!");
+                        event.value = currentTask;
+                        return;
+                    }
+                });
+                //oppdater oppgave
+                tasks.forEach((task) => {
+                    if (task.task === currentTask) {
+                        task.task = event.value;
+                    }
+                });
+                //oppdater lokal lagring
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+            }
+
+            function taskComplete(event) {
+                let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
+                tasks.forEach(task => {
+                    if (task.task === event.nextElementSibling.value) {
+                        task.completed = !task.completed;
+                    }
+                });
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                event.nextElementSibling.classList.toggle("completed");
+            }
+
+            function removeTask(event) {
+                let tasks = Array.from(JSON.parse(localStorage.getItem(&quot;task&quot;)));
+                tasks.forEach(task =&gt; {
+                    if (task.task === event.parentNode.children[1].value) {
+                        //slett oppgave
+                        tasks.splice(tasks.indexOf(task), 1);
+                    }
+                });
+                localStorage.setItem(&quot;tasks&quot;, JSON.stringify(tasks));
+            }
+        </script>
+    </body>
+</html>
