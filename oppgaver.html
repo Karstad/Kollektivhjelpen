@@ -44,6 +44,8 @@
             <span onclick="newElement()" class="addBtn">Legg til</span>
         </div>
 
+        <ul id="minUl"></ul>
+
         <script>
             //lukk-knapp for hver oppgave i listen
             var myNodelist = document.getElementsByTagName("LI");
@@ -87,10 +89,9 @@
                 if (inputValue === "") {
                     alert("Du må legge til en oppgave.");
                 } else {
-                    document.getElementById("fellesUl").appendChild(li);
+                    document.getElementById("minUl").appendChild(li);
                 }
                 document.getElementById("inputItems").value = "";
-                document.getElementById("inputPerson").value = "";
 
                 var span = document.createElement("SPAN");
                 var txt = document.createTextNode("\u00D7");
@@ -106,7 +107,8 @@
                 }
             }
 
-            /* bytter på å vise og gjemme meny ved klikk */
+            /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
             }
