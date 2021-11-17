@@ -129,8 +129,7 @@ nav {
 .btn:hover {
     background-color: rgb(34, 209, 18);
 }
-.btn:focus {
-}
+
 #mpNav {
     height: 65vh;
     width: 100%;
