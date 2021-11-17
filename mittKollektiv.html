@@ -5,43 +5,33 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="styles/style.css" rel="stylesheet" />
-        <link href="styles/navStyle.css" rel="stylesheet" />
         <title>Mitt kollektiv</title>
     </head>
     <body>
-        <header>
-            <div>
-                <img src="" alt="eksempel profilbilde" />
-            </div>
-            <nav>
-                <div class="dropContainer">
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">
-                            Mine
-                        </button>
-                        <div id="myDropdown" class="dropdown-content" id="drop">
-                            <a href="oppgaver.html">Oppgaver</a>
-                            <a href="kalender.html">Kalender</a>
-                            <a href="index.html">Index</a>
-                        </div>
-                    </div>
-
-                    <div class="dropdown">
-                        <button onclick="myFunction2()" class="dropbtn2">
-                            Kollektiv
-                        </button>
-                        <div id="myDropdown2" class="dropdown-content">
-                            <a href="mittKollektiv.html">Mitt Kollektiv</a>
-                            <a href="fellesOppgaver.html">Felles Oppgaver</a>
-                            <a href="fellesKalender.html">Felles Kalender</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+        <header id="mpHeader">
+            <img src="" alt="eksempel profilbilde" />
+            <p id="navnHeader">Ola normann</p>
         </header>
 
         <section id="mpNav">
             <h1>Kollektivets:</h1>
+            <ul>
+                <li>
+                    <a class="btn" href="fellesOppgaver.html">Oppgaver</a>
+                </li>
+                <li>
+                    <a class="btn" href="fellesKalender.html">Kalender</a>
+                </li>
+                <li>
+                    <a class="btn" href="fellesHandleliste.html">Handleliste</a>
+                </li>
+                <li>
+                    <a class="btn" href="#">Oppgjør</a>
+                </li>
+                <li>
+                    <a class="btn" href="index.html">Min Side</a>
+                </li>
+            </ul>
         </section>
         <footer id="fNav">
             <div id="rbtn">
@@ -55,7 +45,5 @@
                 <a href="#"></a>
             </div>
         </footer>
-
-        <script src="navbar.js"></script>
     </body>
 </html>

@@ -1,124 +1,12 @@
 /* starten på stylesheet*/
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
 body {
     /*test av link*/
-
+    margin: 0;
     background-color: lightblue;
 }
-
 a {
     color: black;
     text-decoration: none;
-}
-nav {
-    display: flex;
-    gap: 0.5em;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    background-color: #e1e3ea;
-    height: 100vh;
-    font-family: sans-serif;
-}
-
-.gjoremal {
-    width: 60%;
-}
-
-@media (max-width: 768px) {
-    .gjoremal {
-        width: 90%;
-    }
-}
-
-.gjoremal h1 {
-    color: white;
-    font-size: 40px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 0.5rem 0.5rem 0 0;
-    background-color: indianred;
-    font-family: "Open Sans", sans-serif;
-}
-
-.gjoremal form {
-    display: flex;
-    width: 100%;
-    background-color: #262e4c;
-}
-
-.gjoremal form input {
-    border: none;
-    background-color: #3c4979;
-    font-size: 18px;
-    color: white;
-    padding: 10px;
-    width: 90%;
-}
-
-.gjoremal form button {
-    border: none;
-    color: white;
-    background-color: #1dd2af;
-    font-size: 25px;
-    font-weight: 600;
-    height: 42px;
-    width: 10%;
-}
-
-.gjoremal ul {
-    list-style: none;
-    color: #e0e0e0;
-    padding: 0;
-}
-
-.gjoremal ul li {
-    padding: 10px;
-    background-color: #262e4c;
-    border-bottom: 1px solid #3a4674;
-}
-
-.check {
-    width: 0.8em;
-    height: 0.8em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid rgb(255, 255, 255);
-    -webkit-appearance: none;
-}
-
-.check:checked {
-    background-color: #1dd2af;
-}
-
-.task {
-    font-size: 18px;
-    padding: 0 10px;
-}
-
-.task:focus {
-    outline: none;
-}
-
-.gjoremal ul li i {
-    float: right;
-    cursor: pointer;
-}
-
-.gjoremal ul li i:hover {
-    color: rgb(255, 82, 82);
-}
-
-.complete {
-    color: rgba(192, 192, 192, 0.842);
-    text-decoration: line-through;
 }
 
 .btn {
@@ -129,10 +17,11 @@ nav {
 .btn:hover {
     background-color: rgb(34, 209, 18);
 }
-
+.btn:focus {
+}
 #mpNav {
     height: 65vh;
-    width: 100%;
+    width: 100vw;
     font-size: large;
 }
 #mpNav h1 {
@@ -145,32 +34,37 @@ nav {
 #mpNav li {
     margin: 5rem 2rem;
 }
-Header {
+#mpHeader {
     height: 25vh;
-    width: 100%;
-    display: flex;
+    width: 100vw;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #000000;
-}
 
-Header img {
+    border: 1px solid #000000;
+}
+#mpHeader :first-child {
+    align-self: center;
+}
+#mpHeader :last-child {
+    align-self: center;
+}
+#mpHeader img {
     height: 12vh;
     width: 12vh;
     border-radius: 12vh;
     border: 1px solid #000000;
-    background-color: gray;
+    background-color: rgb(0, 153, 255);
     text-align: center;
 }
-Header p {
+#mpHeader p {
     display: inline-flex;
     font-size: 1.5rem;
 }
 #fNav {
     box-sizing: border-box;
     height: 10vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgb(0, 153, 255);
     border: 1px solid #000;
     position: fixed;
@@ -201,17 +95,33 @@ Header p {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: dimgray;
+    background-color: rgb(0, 153, 255);
     color: white;
 }
 ul {
     list-style-type: none;
 }
 
+#oppgTabell tfoot {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: rgb(34, 209, 18);
+}
+
+#oppgTabell #aktivUke {
+    background-color: rgb(34, 209, 18);
+    color: blue;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
 /* Month header */
 .month {
-    padding: 15px 15px;
-    background: dimgray;
+    padding: 70px 25px;
+    width: 100%;
+    background: rgb(0, 153, 255);
     text-align: center;
 }
 
@@ -275,13 +185,13 @@ ul {
 /* Highlight the "current" day */
 .days li .oppgave {
     padding: 5px;
-    background: dimgray;
+    background: rgb(0, 153, 255);
     color: white !important;
 }
 
 .days li .oppgave:hover {
     padding: 7px;
-    background: green;
+    background: rgb(34, 209, 18);
 }
 .oppgave {
     position: relative;
@@ -315,11 +225,9 @@ ul {
 .test{
     visibility: hidden;
 }
-
 .test .oppgave:hover{
     visibility: visible;
 }
-
 .test:hover{
     visibility: visible;
 }
