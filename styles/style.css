@@ -4,11 +4,8 @@
 
 body {
     /*test av link*/
-    margin: 0;
-    margin-bottom: 100px;
+
     background-color: lightblue;
-    font-family: "Open Sans", sans-serif;
-    width: 100%;
 }
 
 a {
