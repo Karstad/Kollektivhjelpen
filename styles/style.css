@@ -9,15 +9,15 @@ a {
     text-decoration: none;
 }
 
+.btn {
     background-color: rgb(0, 153, 255);
     border: 2px solid black;
     padding: 1em 2em;
 }
-
+.btn:hover {
     background-color: rgb(34, 209, 18);
 }
-.btn:focus {
-}
+
 #mpNav {
     height: 65vh;
     width: 100vw;
@@ -79,36 +79,49 @@ a {
 #oppgTabell th {
     border: 1px solid #ddd;
     padding: 8px;
+}
 
+#oppgTabell tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#oppgTabell tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+/*#oppgTabell tr:hover {background-color: #ddd;}*/
+
+#oppgTabell th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: rgb(0, 153, 255);
     color: white;
+}
+ul {
+    list-style-type: none;
+}
 
-  }
-  ul {list-style-type: none;}
-
-  #oppgTabell tfoot{
+#oppgTabell tfoot {
     border: 1px solid #ddd;
     padding: 8px;
     background-color: rgb(34, 209, 18);
-  }
+}
 
-  #oppgTabell #aktivUke{
+#oppgTabell #aktivUke {
     background-color: rgb(34, 209, 18);
     color: blue;
-  }
+}
 
-body {font-family: Verdana, sans-serif;}
+body {
+    font-family: Verdana, sans-serif;
+}
 
 /* Month header */
 .month {
-  padding: 70px 25px;
-  width: 100%;
-  background: rgb(0, 153, 255);
-  text-align: center;
-
+    padding: 70px 25px;
+    width: 100%;
+    background: rgb(0, 153, 255);
+    text-align: center;
 }
 
 /* Month list */
@@ -170,11 +183,9 @@ body {font-family: Verdana, sans-serif;}
 
 /* Highlight the "current" day */
 .days li .oppgave {
-
-  padding: 5px;
-  background: rgb(0, 153, 255);
-  color: white !important
-
+    padding: 5px;
+    background: rgb(0, 153, 255);
+    color: white !important;
 }
 
 .days li .oppgave:hover {
