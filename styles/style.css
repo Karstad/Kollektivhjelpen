@@ -6,7 +6,7 @@ body {
     /*test av link*/
     margin: 0;
     margin-bottom: 100px;
-    background-color: lightgray;
+    background-color: lightblue;
     font-family: "Open Sans", sans-serif;
     width: 100%;
 }
@@ -125,12 +125,12 @@ nav {
 }
 
 .btn {
-    background-color: dimgray;
+    background-color: rgb(0, 153, 255);
     border: 2px solid black;
     padding: 1em 2em;
 }
 .btn:hover {
-    background-color: green;
+    background-color: rgb(34, 209, 18);
 }
 .btn:focus {
 }
@@ -175,7 +175,7 @@ Header p {
     box-sizing: border-box;
     height: 10vh;
     width: 100%;
-    background-color: dimgray;
+    background-color: rgb(0, 153, 255);
     border: 1px solid #000;
     position: fixed;
     bottom: 0;
@@ -194,6 +194,9 @@ Header p {
 
 #oppgTabell tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+#oppgTabell tr:nth-child(odd) {
+    background-color: lightgray;
 }
 
 /*#oppgTabell tr:hover {background-color: #ddd;}*/
