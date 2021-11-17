@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css">
-        <title>Handleliste</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <link href="styles/navStyle.css" rel="stylesheet" />
+        <title>Felles Handleliste</title>
     </head>
     <body>
-        <header id="mpHeader">
-            <img src="" alt="eksempel profilbilde">
-            <p id="navnHeader">Ola normann</p>
-        </header>
+        <nav>
+            <div class="dropContainer">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Mine</button>
+                    <div id="myDropdown" class="dropdown-content" id="drop">
+                        <a href="oppgaver.html">Oppgaver</a>
+                        <a href="handleliste.html">Handleliste</a>
+                        <a href="kalender.html">Kalender</a>
+                        <a href="index.html">Index</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn2">
+                        Kollektiv
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                        <a href="fellesHandleliste.html">Felles Handleliste</a>
+                        <a href="fellesKalender.html">Felles Kalender</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <section id="oppgTabell">
             <h3>Min Handleliste</h3>
@@ -55,10 +77,8 @@
                     <td>42</td>
                 </tr>
                 <tr>
-                    
-                    <td style="background-color:rgb(34, 209, 18)">Tom</td>
-                    <td style="background-color:rgb(34, 209, 18)">43</td>
-                    
+                    <td style="background-color: rgb(34, 209, 18)">Tom</td>
+                    <td style="background-color: rgb(34, 209, 18)">43</td>
                 </tr>
                 <tr>
                     <td>Cathrine</td>
@@ -78,5 +98,6 @@
         <footer id="fNav">
             <a class="btn" href="mittKollektiv.html">Tilbake</a>
         </footer>
+        <script src="navbar.js"></script>
     </body>
 </html>

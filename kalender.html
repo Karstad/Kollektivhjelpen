@@ -1,89 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Min kalender</title>
-</head>
-<body>
-    <header id="mpHeader">
-        <img src="" alt="eksempel profilbilde">
-        <p id="navnHeader">Ola normann</p>
-    </header>
-    <div class="month">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>Oktober<br><span style="font-size:18px">2021</span></li>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/style.css" rel="stylesheet" />
+        <link href="styles/navStyle.css" rel="stylesheet" />
+        <title>Min kalender</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="" alt="eksempel profilbilde" />
+            </div>
+            <nav>
+                <div class="dropContainer">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">
+                            Mine
+                        </button>
+                        <div id="myDropdown" class="dropdown-content" id="drop">
+                            <a href="oppgaver.html">Oppgaver</a>
+                            <a href="handleliste.html">Handleliste</a>
+                            <a href="kalender.html">Kalender</a>
+                            <a href="index.html">Index</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button onclick="myFunction2()" class="dropbtn2">
+                            Kollektiv
+                        </button>
+                        <div id="myDropdown2" class="dropdown-content">
+                            <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                            <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                            <a href="fellesHandleliste.html"
+                                >Felles Handleliste</a
+                            >
+                            <a href="fellesKalender.html">Felles Kalender</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="month">
+            <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>Oktober<br /><span style="font-size: 18px">2021</span></li>
+            </ul>
+        </div>
+
+        <ul class="weekdays">
+            <li>Mandag</li>
+            <li>Tirsdag</li>
+            <li>Onsdag</li>
+            <li>Torsdag</li>
+            <li>Fredag</li>
+            <li>Lørdag</li>
+            <li>Søndag</li>
         </ul>
-      </div>
-      
-      <ul class="weekdays">
-        <li>Mandag</li>
-        <li>Tirsdag</li>
-        <li>Onsdag</li>
-        <li>Torsdag</li>
-        <li>Fredag</li>
-        <li>Lørdag</li>
-        <li>Søndag</li>
-      </ul>
-      
-      <ul class="days">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li><span class="oppgave">27
-            <span class="test"> 
-                <section id="oppgTabell">
-                    <table>
-                        <tr>
-                            <th>Oppgave</th>
-                            <th>Deadline</th>
-                        </tr>
-                        <tr>
-                            <td>støvsuge rommet</td>
-                            <td>27.10.21</td>
-                        </tr>
-                    </table>
-                </section>
-            </span>
-        </span></li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-      </ul>
-      <footer id="fNav">
-        <a class="btn" href="index.html">Tilbake</a>
-    </footer>
-</body>
+
+        <ul class="days">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>
+                <span class="oppgave"
+                    >27
+                    <span class="test">
+                        <section id="oppgTabell">
+                            <table>
+                                <tr>
+                                    <th>Oppgave</th>
+                                    <th>Deadline</th>
+                                </tr>
+                                <tr>
+                                    <td>støvsuge rommet</td>
+                                    <td>27.10.21</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </span>
+                </span>
+            </li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+        <footer id="fNav">
+            <a class="btn" href="index.html">Tilbake</a>
+        </footer>
+
+        <script src="navbar.js"></script>
+    </body>
 </html>
