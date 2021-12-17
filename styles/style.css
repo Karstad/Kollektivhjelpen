@@ -69,7 +69,7 @@ a {
     position: fixed;
     bottom: 0;
 }
-/*https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy*/
+
 #oppgTabell {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -79,7 +79,7 @@ a {
 #oppgTabell td,
 #oppgTabell th {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(221, 221, 221, 0.781);
 }
 
 #oppgTabell tr:nth-child(odd) {
@@ -118,8 +118,8 @@ body {
 /* Maaned header */
 .maaned {
     text-align: center;
-    padding: 70px 25px;
     width: 100%;
+    padding: 75px 25px;
     background: rgb(0, 153, 255);
 }
 
@@ -145,8 +145,8 @@ body {
 /* "knapp" neste*/
 .maaned .neste {
     float: right;
-    padding-top: 10px;
     padding-right: 10px;
+    padding-top: 10px;
 }
 
 /* ukedager (Man-Søn) */
@@ -195,7 +195,7 @@ body {
     position: relative;
     display: inline-block;
 }
-/*Pop-up menyen gjort her er placeholder tatt inspirert av https://www.codegrepper.com/code-examples/html/how+to+create+a+hover+text+box+in+html*/ 
+/*hover vinduet er laget med hjelp fra  https://www.codegrepper.com/code-examples/html/how+to+create+a+hover+text+box+in+html*/ 
 .oppgave .test {
     visibility: hidden;
     background-color: white;
