@@ -230,7 +230,7 @@ body {
 */
 
 }
-/*her starter styling for login.html*/
+/*her starter styling for index.html*/
 #LRformContainer{
     border: 1px solid red;
     display: flex;
@@ -238,8 +238,4 @@ body {
     min-width: 300px;
     min-height: 300px;
 }
-#login{
-    border: 1px solid aqua;
-    width: 100%;
-}
-/*her slutter styling for login.html*/
+/*her slutter styling for index.html*/

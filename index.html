@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="styles/style.css" rel="stylesheet" />
-        <link href="styles/navStyle.css" rel="stylesheet" />
-        <title>Kollektivhjelpen</title>
-    </head>
-    <body>
-        <nav>
-            <div class="dropContainer">
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Mine</button>
-                    <div id="myDropdown" class="dropdown-content" id="drop">
-                        <a href="oppgaver.html">Oppgaver</a>
-                        <a href="handleliste.html">Handleliste</a>
-                        <a href="kalender.html">Kalender</a>
-                        <a href="index.html">Index</a>
-                    </div>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial_scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/logRegstyle.css" rel="stylesheet">
+    <title>Kollektivhjelpen</title>
+</head>
+<body>
+    <!--<div id="logo">
+        <img src="" alt="Logobilde til siden">
+    </div>-->
 
-                <div class="dropdown">
-                    <button onclick="myFunction2()" class="dropbtn2">
-                        Kollektiv
-                    </button>
-                    <div id="myDropdown2" class="dropdown-content">
-                        <a href="mittKollektiv.html">Mitt Kollektiv</a>
-                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
-                        <a href="fellesHandleliste.html">Felles Handleliste</a>
-                        <a href="fellesKalender.html">Felles Kalender</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <footer id="fNav">
-            <div id="rbtn">
-                <img src="" alt="" />
-                <a href=""></a>
-            </div>
-            <div id="centerbtn">
-                <img src="" alt="" />
-            </div>
-            <div id="chatbtn">
-                <a href="#"></a>
-            </div>
-        </footer>
-        <script src="navbar.js"></script>
-    </body>
+    <div id="LRformContainer">
+<!--   <div id="1Lit">
+            <a class="button" href="#login">Logg&nbsp;inn</a>
+            <p>Har du ikke bruker? <a href="#reg">Registrer&nbsp;deg&nbsp;her</a>
+            </p>
+        </div>
+-->
+        <div id="login">
+            <p>Logg inn her:</p>
+            <form id="loginForm">
+                <label for="UserEm">E-mail:</label>
+                <input id="UserEm" name="UserEmail" type="email" placeholder="Ola.normann@mail.com">
+                <label for="pass">Passord:</label>
+                <input id="pass" name="password" type="password" placeholder="*****">
+                <!--<button class="button" name="Loginbtn" type="button">Logg&nbsp;inn</button>-->
+                <a id="loginbtn" class="btnd" href="hjemmeside.html">Logg Inn</a>
+            </form>
+        </div>
+        <div id="reg">
+            <p>Registrer deg her:</p>
+            <form id="regForm">
+                <label for="navn">Fult navn:</label>
+                <input id="navn" name="navn" type="text" placeholder="Ola Normann">
+                <label for="UserEmail">E-post:</label>
+                <input id="UserEmail" name="UserEmail" type="email" placeholder="Ola.normann@mail.com">
+                <label for="password">Passord:</label>
+                <input id="password" name="password" type="password" placeholder="*****">
+                <lable for="passchek">Gjenta Passord</lable>
+                <input id="passchek" name="passchek" type="password" placeholder="*****">
+                <!--<button class="button" name="submitReg" type="submit">Send&nbsp;inn</button>-->
+                <a id="Regbtn" class="btnd" href="hjemmeside.html">Send Inn</a>
+            </form>
+        </div>
+    </div>
+    <link href="scripts/LRscript.js" rel="script">
+</body>
 </html>
