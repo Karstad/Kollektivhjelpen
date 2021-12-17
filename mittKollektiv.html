@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Mitt kollektiv</title>
-</head>
-<body>
-    <header id="mpHeader">
-        <img src="" alt="eksempel profilbilde">
-        <p id="navnHeader">Ola normann</p>
-    </header>
-    
-    <section id="mpNav">
-        <h1>Kollektivets:</h1>
-        <ul>
-            <li>
-                <a class="btn" href="fellesOppgaver.html">Oppgaver</a>
-            </li>
-            <li>
-                <a class="btn" href="fellesKalender.html">Kalender</a>
-            </li>
-            <li>
-                <a class="btn" href="#">Handleliste</a>
-            </li>
-            <li>
-                <a class="btn" href="#">Oppgjør</a>
-            </li>
-            <li>
-                <a class="btn" href="index.html">Min Side</a>
-            </li>
-        </ul>
-    </section>
-    <footer id="fNav">
-        <div id="rbtn">
-            <img src="" alt="">
-            <a href=""></a>
-        </div>
-        <div id="centerbtn">
-            <img src="" alt="">
-        </div>
-        <div id="chatbtn">
-            <a href="#"></a>
-        </div>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/style.css" rel="stylesheet" />
+        <link href="styles/navStyle.css" rel="stylesheet" />
+        <title>Mitt kollektiv</title>
+    </head>
+    <body>
+        <nav>
+            <div class="dropContainer">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Mine</button>
+                    <div id="myDropdown" class="dropdown-content" id="drop">
+                        <a href="oppgaver.html">Oppgaver</a>
+                        <a href="handleliste.html">Handleliste</a>
+                        <a href="kalender.html">Kalender</a>
+                        <a href="index.html">Index</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn2">
+                        Kollektiv
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                        <a href="fellesHandleliste.html">Felles Handleliste</a>
+                        <a href="fellesKalender.html">Felles Kalender</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <footer id="fNav">
+            <div id="rbtn">
+                <img src="" alt="" />
+                <a href=""></a>
+            </div>
+            <div id="centerbtn">
+                <img src="" alt="" />
+            </div>
+            <div id="chatbtn">
+                <a href="#"></a>
+            </div>
+        </footer>
+        <script src="navbar.js"></script>
+    </body>
 </html>

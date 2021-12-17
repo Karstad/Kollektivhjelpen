@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="styles/fellesOppg.css" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/style.css" />
         <link href="styles/navStyle.css" rel="stylesheet" />
-        <title>Felles oppgaver</title>
+        <title>Handleliste</title>
     </head>
     <body>
         <nav>
@@ -34,20 +34,33 @@
                 </div>
             </div>
         </nav>
-        <div id="todoDiv" class="addItems">
-            <h2>Felles Opggaver</h2>
-            <input
-                type="text"
-                id="inputItems"
-                placeholder="Legg til gjøremål..."
-            />
-            <input type="text" id="inputPerson" placeholder="Legg til person" />
-            <span onclick="newElement()" class="addBtn">Legg til</span>
-        </div>
-
-        <ul id="fellesUl"></ul>
-
-        <script src="fellesOppg.js"></script>
         <script src="navbar.js"></script>
     </body>
+    <section id="oppgTabell">
+        <h3>Min Handleliste</h3>
+        <table>
+            <tr>
+                <th>Vare</th>
+                <th>forventet pris</th>
+            </tr>
+            <tr>
+                <td>Kylling</td>
+                <td>120kr</td>
+            </tr>
+            <tr>
+                <td>Pasta</td>
+                <td>25kr</td>
+            </tr>
+            <tr>
+                <td>Brokkoli</td>
+                <td>20kr</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>Forventet sum</td>
+                    <td>165kr</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
 </html>

@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
-    <title>Oppgaver</title>
-</head>
-<body>
-    <header id="mpHeader">
-        <img src="" alt="eksempel profilbilde">
-        <p id="navnHeader">Ola normann</p>
-    </header>
-    <!--eksempel på oppsett-->
-    <section id="oppgTabell">
-        <h3>Mine Oppgaver:</h3>
-        <table>
-            <tr>
-                <th>Oppgave</th>
-                <th>Deadline</th>
-            </tr>
-            <tr>
-                <td>støvsuge rommet</td>
-                <td>19.10.21</td>
-            </tr>
-            <tr>
-                <td>støvsuge rommet</td>
-                <td>19.10.21</td>
-            </tr>
-            <tr>
-                <td>støvsuge rommet</td>
-                <td>19.10.21</td>
-            </tr>
-        </table>
-    </section>
-    <footer id="fNav">
-        <a class="btn" href="index.html">Tilbake</a>
-    </footer>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="styles/navStyle.css" rel="stylesheet" />
+        <link href="styles/fellesOppg.css" rel="stylesheet" />
+        <title>Oppgaver</title>
+    </head>
+    <body>
+        <nav>
+            <div class="dropContainer">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Mine</button>
+                    <div id="myDropdown" class="dropdown-content" id="drop">
+                        <a href="oppgaver.html">Oppgaver</a>
+                        <a href="handleliste.html">Handleliste</a>
+                        <a href="kalender.html">Kalender</a>
+                        <a href="index.html">Index</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button onclick="myFunction2()" class="dropbtn2">
+                        Kollektiv
+                    </button>
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="mittKollektiv.html">Mitt Kollektiv</a>
+                        <a href="fellesOppgaver.html">Felles Oppgaver</a>
+                        <a href="fellesHandleliste.html">Felles Handleliste</a>
+                        <a href="fellesKalender.html">Felles Kalender</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="minTodoDiv" class="addItems">
+            <h2>Mine Opggaver</h2>
+            <input
+                type="text"
+                id="inputItems"
+                placeholder="Legg til gjøremål..."
+            />
+
+            <span onclick="newElement()" class="addBtn">Legg til</span>
+        </div>
+
+        <ul id="minUl"></ul>
+
+        <script src="oppgaver.js"></script>
+        <script src="navbar.js"></script>
+    </body>
 </html>
