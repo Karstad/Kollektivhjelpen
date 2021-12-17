@@ -69,7 +69,7 @@ a {
     position: fixed;
     bottom: 0;
 }
-/*Tabellen her er placeholder tatt fra https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy*/
+/*https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy*/
 #oppgTabell {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -78,25 +78,23 @@ a {
 
 #oppgTabell td,
 #oppgTabell th {
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
 }
 
-#oppgTabell tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
 #oppgTabell tr:nth-child(odd) {
     background-color: lightgray;
 }
+#oppgTabell tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-/*#oppgTabell tr:hover {background-color: #ddd;}*/
 
 #oppgTabell th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 12px 0px;
     text-align: left;
-    background-color: rgb(0, 153, 255);
     color: white;
+    background-color: rgb(0, 153, 255);
 }
 ul {
     list-style-type: none;
@@ -116,63 +114,63 @@ ul {
 body {
     font-family: Verdana, sans-serif;
 }
-/*Kalenderen under er placeholder tatt fra https://www.w3schools.com/howto/howto_css_calendar.asp*/
-/* Month header */
-.month {
+/*Kalenderen under er lagd med hjelp fra https://www.w3schools.com/howto/howto_css_calendar.asp*/
+/* Maaned header */
+.maaned {
+    text-align: center;
     padding: 70px 25px;
     width: 100%;
     background: rgb(0, 153, 255);
-    text-align: center;
 }
 
-/* Month list */
-.month ul {
+/* måned liste */
+.maaned ul {
     margin: 0;
     padding: 0;
 }
 
-.month ul li {
+.maaned ul li {
     color: white;
-    font-size: 20px;
-    text-transform: uppercase;
+    font-size: 22px;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
-/* Previous button inside month header */
-.month .prev {
+/* "Knapp" forrige */
+.maaned .forrige {
     float: left;
     padding-top: 10px;
 }
 
-/* Next button */
-.month .next {
+/* "knapp" neste*/
+.maaned .neste {
     float: right;
     padding-top: 10px;
     padding-right: 10px;
 }
 
-/* Weekdays (Mon-Sun) */
-.weekdays {
+/* ukedager (Man-Søn) */
+.ukedager {
     margin: 0;
     padding: 10px 0;
     background-color: #ddd;
 }
 
-.weekdays li {
+.ukedager li {
     display: inline-block;
     width: 13.6%;
     color: #666;
     text-align: center;
 }
 
-/* Days (1-31) */
-.days {
+/* dager (1-31) */
+.dager {
     padding: 10px 0;
     background: #eee;
     margin: 0;
 }
 
-.days li {
+.dager li {
     list-style-type: none;
     display: inline-block;
     width: 13.6%;
@@ -182,14 +180,14 @@ body {
     color: #777;
 }
 
-/* Highlight the "current" day */
-.days li .oppgave {
+/* Highlighting av valgt dag*/
+.dager li .oppgave {
     padding: 5px;
     background: rgb(0, 153, 255);
     color: white !important;
 }
 
-.days li .oppgave:hover {
+.dager li .oppgave:hover {
     padding: 7px;
     background: rgb(34, 209, 18);
 }
@@ -222,14 +220,4 @@ body {
 .oppgave:hover .test {
     visibility: visible;
 }
-/*
-.test{
-    visibility: hidden;
-}
-.test .oppgave:hover{
-    visibility: visible;
-}
-.test:hover{
-    visibility: visible;
-}
-*/
+
