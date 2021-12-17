@@ -71,7 +71,7 @@ ul li.checked::before {
 
 /* Style the header */
 .addItems {
-    background-color: #f44336;
+    background-color: rgb(16 0 255);
     padding: 30px 40px;
     color: white;
     text-align: center;
