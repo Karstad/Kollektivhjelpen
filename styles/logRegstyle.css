@@ -1,0 +1,41 @@
+#logo{
+    width: auto;
+    margin: auto;
+}
+#loginForm,#regForm {
+    display: block;
+    max-width: min-content;
+    padding: 2rem;
+    border: 1px solid black;
+}
+#LRformContainer {
+    margin: auto;
+    display: block;
+    max-width: min-content;
+}
+#pass{
+    margin-bottom: 2em;
+}
+#passchek{
+    margin-bottom: 2em;
+}
+.btnd{
+
+    box-sizing: border-box;
+    width: max-content;
+    height: fit-content;
+    text-align: center;
+    border: 1px solid black;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: auto;
+    background-color: #2980b9;
+}
+.btnd:hover{
+    background-color: #3498db;
+}
+.btnd:active{
+    background-color: #1dd2af;
+}

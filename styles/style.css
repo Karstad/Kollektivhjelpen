@@ -8,6 +8,8 @@ a {
     color: black;
     text-decoration: none;
 }
+/*slutten av multipage style setting*/
+/*her starter styling av hjemmesiden */
 
 .btn {
     background-color: rgb(0, 153, 255);
@@ -66,6 +68,7 @@ a {
     width: 100vw;
     background-color: rgb(0, 153, 255);
     border: 1px solid #000;
+
     position: fixed;
     bottom: 0;
 }
@@ -221,3 +224,18 @@ body {
     visibility: visible;
 }
 
+.test:hover{
+    visibility: visible;
+}
+*/
+
+}
+/*her starter styling for index.html*/
+#LRformContainer{
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+}
+/*her slutter styling for index.html*/
